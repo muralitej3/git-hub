@@ -1,0 +1,29 @@
+public class SystemInfo {
+
+    public static void main(String[] args) {
+
+        System.out.println("===== System Information =====");
+
+        // Get operating system name
+        String os = System.getProperty("os.name");
+        System.out.println("Operating System: " + os);
+
+        // Get Java version
+        String javaVersion = System.getProperty("java.version");
+        System.out.println("Java Version: " + javaVersion);
+
+        // Get system architecture
+        String architecture = System.getProperty("os.arch");
+        System.out.println("Architecture: " + architecture);
+
+        // Get user name
+        String user = System.getProperty("user.name");
+        System.out.println("User Name: " + user);
+
+        // Get current directory
+        String directory = System.getProperty("user.dir");
+        System.out.println("Current Directory: " + directory);
+
+        System.out.println("==============================");
+    }
+}
