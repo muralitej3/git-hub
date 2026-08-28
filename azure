@@ -1,0 +1,29 @@
+print("===== Linux System Monitoring =====")
+
+# CPU Usage
+cpu = psutil.cpu_percent(interval=1)
+print("CPU Usage:", cpu, "%")
+
+# Memory Usage
+memory = psutil.virtual_memory()
+print("Memory Usage:", memory.percent, "%")
+print("Total Memory:", round(memory.total / (1024 ** 3), 2), "GB")
+print("Available Memory:", round(memory.available / (1024 ** 3), 2), "GB")
+
+# Disk Usage
+disk = psutil.disk_usage("/")
+print("Disk Usage:", disk.percent, "%")
+print("Total Disk:", round(disk.total / (1024 ** 3), 2), "GB")
+print("Free Disk:", round(disk.free / (1024 ** 3), 2), "GB")
+
+# Warning
+if cpu > 80:
+    print("WARNING: CPU usage is high!")
+
+if memory.percent > 80:
+    print("WARNING: Memory usage is high!")
+
+if disk.percent > 80:
+    print("WARNING: Disk usage is high!")
+
+print("===== Monitoring Completed =====")
